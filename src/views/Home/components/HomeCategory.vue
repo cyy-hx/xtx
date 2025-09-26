@@ -41,7 +41,7 @@ const categoryStore = useCategoryStore()
   height: 500px;
   background: rgba(0, 0, 0, 0.8);
   position: relative;
-  z-index: 99;
+  z-index: 1000;
 
   .menu {
     li {
@@ -71,6 +71,7 @@ const categoryStore = useCategoryStore()
         top: 0;
         display: none;
         padding: 0 15px;
+        z-index: 1001;
 
         h4 {
           font-size: 20px;

@@ -10,7 +10,7 @@ html {
 body {
   height: 100%;
   color: #333;
-  min-width: 1240px;
+  min-width: 320px;
   font: 1em/1.4 'Microsoft Yahei', 'PingFang SC', 'Avenir', 'Segoe UI',
     'Hiragino Sans GB', 'STHeiti', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei',
     sans-serif;
@@ -65,6 +65,12 @@ ul {
   width: 1240px;
   margin: 0 auto;
   position: relative;
+
+  // 响应式布局
+  @media (max-width: 1240px) {
+    width: 100%;
+    padding: 0 20px;
+  }
 }
 .ellipsis {
   white-space: nowrap;
