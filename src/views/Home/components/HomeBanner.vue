@@ -1,7 +1,6 @@
 <script setup>
-import { getBannerAPI }  from '@/apis/home'
-import { onMounted } from 'vue'
-import { ref } from 'vue'
+import { getBannerAPI } from '@/apis/home'
+import { onMounted, ref } from 'vue'
 
 const bannerList = ref([])
 
@@ -31,10 +30,10 @@ onMounted(() => getBanner())
 
 <style scoped lang='scss'>
 .home-banner {
-  width: 990px;
+  width: 1240px;
   height: 500px;
   position: absolute;
-  left: 250px;
+  left: 0;
   top: 0;
   z-index: 98;
 

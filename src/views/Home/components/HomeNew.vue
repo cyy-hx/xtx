@@ -1,24 +1,25 @@
 <script setup>
-import { onMounted, ref } from 'vue';
 import HomePanel from './HomePanel.vue'
 import { findNewAPI } from '@/apis/home'
-//获取数据
+import { onMounted, ref } from 'vue'
+
+// 获取数据
 const newList = ref([])
 
 const getNewList = async () => {
   const res = await findNewAPI()
   newList.value = res.result
-
 }
 
 onMounted(() => getNewList())
+
 </script>
 
 <template>
   <HomePanel title="新鲜好物" sub-title="新鲜出炉 品质靠谱">
     <ul class="goods-list">
       <li v-for="item in newList" :key="item.id">
-        <RouterLink to="/">
+        <RouterLink :to="`/detail/${item.id}`">
           <img :src="item.picture" alt="" />
           <p class="name">{{ item.name }}</p>
           <p class="price">&yen;{{ item.price }}</p>
@@ -45,11 +46,11 @@ onMounted(() => getNewList())
   display: flex;
   justify-content: space-between;
   height: 406px;
-  flex-wrap: wrap;
 
   li {
     width: 306px;
     height: 406px;
+
     background: #f0f9f4;
     transition: all .5s;
 
@@ -59,7 +60,7 @@ onMounted(() => getNewList())
     }
 
     img {
-      width: 100%;
+      width: 306px;
       height: 306px;
     }
 
@@ -74,30 +75,6 @@ onMounted(() => getNewList())
 
     .price {
       color: $priceColor;
-    }
-  }
-
-  // 响应式布局
-  @media (max-width: 1240px) {
-    justify-content: center;
-    gap: 20px;
-
-    li {
-      width: calc(50% - 20px);
-      max-width: 306px;
-
-      img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1/1;
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    li {
-      width: 100%;
-      max-width: 306px;
     }
   }
 }

@@ -1,19 +1,13 @@
 <script setup>
-//vueUse
+// vueUse
 import { useScroll } from '@vueuse/core'
-import { useCategoryStore } from '@/stores/category'
 const { y } = useScroll(window)
-
-//使用pinia中的数据
-const categoryStore = useCategoryStore()
-
 
 
 </script>
 
 <template>
-  <div class="app-header-sticky" :class="{ show: y > 78}">
-    {{ y }}
+  <div class="app-header-sticky" :class="{ show: y > 78 }">
     <div class="container">
       <RouterLink class="logo" to="/" />
       <!-- 导航区域 -->
@@ -21,8 +15,32 @@ const categoryStore = useCategoryStore()
         <li class="home">
           <RouterLink to="/">首页</RouterLink>
         </li>
-        <li class="home" v-for="item in categoryStore.categoryList" :key="item.id">
-          <RouterLink to="/">{{ item.name }}</RouterLink>
+        <li>
+          <RouterLink to="/">居家</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">美食</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">服饰</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">母婴</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">个护</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">严选</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">数码</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">运动</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">杂项</RouterLink>
         </li>
       </ul>
 
@@ -42,7 +60,7 @@ const categoryStore = useCategoryStore()
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 1001;
+  z-index: 999;
   background-color: #fff;
   border-bottom: 1px solid #e4e4e4;
   // 此处为关键样式!!!
@@ -60,7 +78,6 @@ const categoryStore = useCategoryStore()
   .container {
     display: flex;
     align-items: center;
-    height: 80px;
   }
 
   .logo {
@@ -81,8 +98,8 @@ const categoryStore = useCategoryStore()
       width: 38px;
       margin-right: 40px;
       font-size: 16px;
+      color: #333;
       line-height: 1;
-
       &:hover {
         color: $xtxColor;
       }
@@ -96,8 +113,6 @@ const categoryStore = useCategoryStore()
   padding-left: 40px;
   position: relative;
   z-index: 998;
-  align-items: center;
-  height: 80px;
 
   li {
     margin-right: 40px;
@@ -109,17 +124,17 @@ const categoryStore = useCategoryStore()
       line-height: 32px;
       height: 32px;
       display: inline-block;
-
+      color: #333;
       &:hover {
         color: $xtxColor;
         border-bottom: 1px solid $xtxColor;
       }
     }
 
-    .active {
-      color: $xtxColor;
-      border-bottom: 1px solid $xtxColor;
-    }
+    // .active {
+    //   color: $xtxColor;
+    //   border-bottom: 1px solid $xtxColor;
+    // }
   }
 }
 </style>

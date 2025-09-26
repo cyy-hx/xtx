@@ -1,7 +1,7 @@
 <script setup>
-import { useCategoryStore } from '@/stores/category'
-const categoryStore = useCategoryStore()
+import  {useCategoryStore}  from '@/stores/category'
 
+const categoryStore = useCategoryStore()
 
 </script>
 
@@ -15,7 +15,7 @@ const categoryStore = useCategoryStore()
         <div class="layer">
           <h4>分类推荐 <small>根据您的购买或浏览记录推荐</small></h4>
           <ul>
-            <li v-for="i in item.goods" :key="i">
+            <li v-for="i in item.goods" :key="i.id">
               <RouterLink to="/">
                 <img :src="i.picture" alt="" />
                 <div class="info">
@@ -41,7 +41,7 @@ const categoryStore = useCategoryStore()
   height: 500px;
   background: rgba(0, 0, 0, 0.8);
   position: relative;
-  z-index: 1000;
+  z-index: 99;
 
   .menu {
     li {
@@ -71,7 +71,6 @@ const categoryStore = useCategoryStore()
         top: 0;
         display: none;
         padding: 0 15px;
-        z-index: 1001;
 
         h4 {
           font-size: 20px;
@@ -149,6 +148,7 @@ const categoryStore = useCategoryStore()
       &:hover {
         .layer {
           display: block;
+
         }
       }
     }

@@ -24,3 +24,5 @@ const lazyPlugin = {
 })
   }
 }
+
+export default lazyPlugin
