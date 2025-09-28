@@ -8,6 +8,7 @@ defineProps({
 </script>
 
 
+
 <template>
   <RouterLink to="/" class="goods-item">
     <img v-img-lazy="goods.picture" alt="" />
