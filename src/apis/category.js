@@ -1,11 +1,11 @@
 import request from '@/utils/http'
 
-export function getCategoryAPI(id) {
-  return request({
-    url:'/category',
-    params:{
-      id
 
+export function getCategoryAPI (id) {
+  return request({
+    url: '/category',
+    params: {
+      id
     }
   })
 }
@@ -18,13 +18,12 @@ export function getCategoryAPI(id) {
 
 export const getCategoryFilterAPI = (id) => {
   return request({
-    url:'/category/sub/filter',
-    params:{
+    url: '/category/sub/filter',
+    params: {
       id
     }
   })
 }
-
 
 /**
  * @description: 获取导航数据
@@ -38,8 +37,8 @@ export const getCategoryFilterAPI = (id) => {
  */
 export const getSubCategoryAPI = (data) => {
   return request({
-    url:'/category/goods/temporary',
-    method:'POST',
+    url: '/category/goods/temporary',
+    method: 'POST',
     data
   })
 }

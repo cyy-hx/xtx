@@ -14,7 +14,12 @@ import lazyPlugin from '@/directives'
 
 
 
+import { ElInfiniteScroll } from 'element-plus'
 const app = createApp(App)
+app.directive('infinite-scroll', ElInfiniteScroll)
+
+
+
 
 app.use(createPinia())
 app.use(router)
