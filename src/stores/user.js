@@ -13,7 +13,7 @@ export const useUserStore = defineStore('user',()=> {
     userInfo.value = res.result
   }
 
-//退出时清楚用户信息
+//退出时清除用户信息
 const clearUserInfo = () => {
   userInfo.value = {}
 }
@@ -23,7 +23,8 @@ const clearUserInfo = () => {
 
   return {
     userInfo,
-    getUserInfo
+    getUserInfo,
+    clearUserInfo
   }
 },{
     persist:true
