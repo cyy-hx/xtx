@@ -13,6 +13,12 @@ export const useUserStore = defineStore('user',()=> {
     userInfo.value = res.result
   }
 
+//退出时清楚用户信息
+const clearUserInfo = () => {
+  userInfo.value = {}
+}
+
+
   //3.以对象的格式把state和action暴露出去
 
   return {
