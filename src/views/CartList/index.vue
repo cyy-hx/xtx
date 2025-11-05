@@ -1,6 +1,15 @@
 <script setup>
 import {useCartStore} from '@/stores/cartStore'
 const cartStore = useCartStore()
+
+
+//单选回调
+const singleCheck = (i,selected) =>{
+  console.log(i,selected)
+  //store cartList数组，无法知道要修改谁的选中状态？
+  //除了selected,补充一个用来筛选的参数skuId
+  cartStore.singleCheck(i.skuId,selected)
+}
 </script>
 
 <template>
@@ -24,7 +33,8 @@ const cartStore = useCartStore()
           <tbody>
             <tr v-for="i in cartStore.cartList" :key="i.id">
               <td>
-                <el-checkbox />
+                <!-- 单选框 -->
+                <el-checkbox :model-value="i.selected" @change="(selected) => singleCheck(i,selected)" />
               </td>
               <td>
                 <div class="goods">
