@@ -62,6 +62,11 @@ export const useCartStore = defineStore('cart', () => {
     }
   }
 
+  //清除购物车
+  const clearCart = () => {
+    cartList.value = []
+  }
+
 
 
   // 单选功能
@@ -103,6 +108,7 @@ export const useCartStore = defineStore('cart', () => {
     allCheck,
     isAll,
     delCart,
+    clearCart,
     singleCheck
   }
 }, {
