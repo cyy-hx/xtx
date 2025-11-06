@@ -6,7 +6,7 @@ import 'element-plus/theme-chalk/el-message.css'
 // 在文件顶部添加路由导入
 import { useRouter } from 'vue-router'
 
-import { useUserStore } from '@/stores/user'
+import { useUserStore } from '@/stores/userStore'
 
 const userStore = useUserStore()
 
