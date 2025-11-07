@@ -1,5 +1,5 @@
 //封装倒计时逻辑函数
-import {computed, ref} from 'vue'
+import {computed, ref, onUnmounted} from 'vue'
 import dayjs from 'dayjs'
 export const useCountDown = () => {
   //1.响应式的数据
@@ -11,9 +11,9 @@ export const useCountDown = () => {
   const start = (currentTime) => {
     //开始倒计时的逻辑
     //核心逻辑的编写:每隔1s就减一
-    formatTime.value = currentTime
+    time.value = currentTime
     timer = setInterval(()=>{
-      formatTime.value--
+      time.value--
     },1000)
   }
   //组件销毁时候清除定时器
